@@ -1,0 +1,62 @@
+{
+  "name": "@yaohaixiao/pagination.js",
+  "version": "0.1.0",
+  "description": "A simple and useful pagination tool.",
+  "main": "pagination.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaohaixiao/pagination.js.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "pagination",
+    "tool"
+  ],
+  "author": "Robert Yao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaohaixiao/pagination.js/issues"
+  },
+  "homepage": "https://github.com/yaohaixiao/pagination.js#readme",
+  "devDependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.14.8",
+    "@babel/eslint-parser": "^7.18.9",
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "babel-jest": "^29.5.0",
+    "commitlint": "^17.4.4",
+    "conventional-changelog-cli": "^2.2.2",
+    "eslint": "^8.34.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-import-resolver-jest": "^3.0.2",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "jest-html-reporter": "^3.7.0",
+    "jsdom": "^22.1.0",
+    "less-plugin-autoprefix": "^2.0.0",
+    "lint-staged": "^13.1.2",
+    "prettier": "^2.8.4",
+    "rollup": "^3.25.2",
+    "typescript": "^5.5.3"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run lint:fix",
+      "npm run prettier:write"
+    ]
+  }
+}

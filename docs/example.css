@@ -5,6 +5,17 @@
     overflow: hidden;
 }
 
+a:link,
+a:visited,
+a:hover {
+    color: #507afe;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .header,
 .footer {
     text-align: center;

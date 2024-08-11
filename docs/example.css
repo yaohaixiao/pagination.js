@@ -11,6 +11,10 @@
    overflow: hidden;
 }
 
+.app {
+    color: #507afe;
+}
+
 .section{
     padding: 16px 0;
     border-bottom: 1px solid #ddd;

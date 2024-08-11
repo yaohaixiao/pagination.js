@@ -49,12 +49,14 @@ npm i -S @yaohaixiao/pagination.js --registry=https://npm.pkg.github.com
 #### CDN
 
 ```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.css" />
 <script src="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.js"></script>
 ```
 
 #### Local
 
 ```html
+<link rel="stylesheet" href="/path/to/pagination.min.css" />
 <script src="/path/to/pagination.min.js"></script>
 ```
 

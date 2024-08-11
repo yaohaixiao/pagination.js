@@ -121,6 +121,9 @@ options.theme = 'bordered'
 new Pagination(options)
 ```
 
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-theme)[https://yaohaixiao.github.io/pagination.js/#section-theme]
+
+
 ### Layout
 
 pagination.js 支持配置导航按钮布局配置，支持上/下一页导航和数字导航的布局组合配置。
@@ -170,6 +173,9 @@ options.layout = ['pager']
 new Pagination(options)
 ```
 
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-layout)[https://yaohaixiao.github.io/pagination.js/#section-layout]
+
+
 ### Page
 
 pagination.js 可以配置 page 参数，用来控制导航按钮的当前页。
@@ -189,6 +195,8 @@ const pagination = new Pagination(options)
 // 或者通过 page() 方法设置
 pagination.page(3)
 ```
+
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-page)[https://yaohaixiao.github.io/pagination.js/#section-page]
 
 
 ### Size
@@ -210,6 +218,8 @@ const pagination = new Pagination(options)
 // 或者通过 size() 方法设置
 pagination.size(30)
 ```
+
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-size)[https://yaohaixiao.github.io/pagination.js/#section-size]
 
 
 ### Limit
@@ -236,6 +246,9 @@ const pagination = new Pagination(options)
 pagination.limit(7)
 ```
 
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-limit)[https://yaohaixiao.github.io/pagination.js/#section-limit]
+
+
 
 ### Disabled
 
@@ -261,6 +274,8 @@ const pagination = new Pagination(options)
 // 或者通过 disabled() 方法设置，启用分页导航
 pagination.disabled(false)
 ```
+
+演示地址：(https://yaohaixiao.github.io/pagination.js/#section-disabled)[https://yaohaixiao.github.io/pagination.js/#section-disabled]
 
 
 ### Events

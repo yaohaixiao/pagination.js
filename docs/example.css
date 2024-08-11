@@ -1,0 +1,29 @@
+.main{
+    margin: 4em;
+    padding: 2em;
+    box-shadow: 0 0 10px 0 #ddd;
+    overflow: hidden;
+}
+
+.header,
+.footer{
+   text-align: center;
+   overflow: hidden;
+}
+
+.section{
+    padding: 16px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.section__title{
+    padding: 0 16px;
+}
+
+.section__demo{
+    padding: 16px;
+}
+
+.footer{
+    padding: 2em;
+}

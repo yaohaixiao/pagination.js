@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pagination.js | Examples</title>
+    <link rel="stylesheet" href="./pagination.min.css" />
+    <link rel="stylesheet" href="./example.css" />
+</head>
+<body>
+<main class="main">
+    <header class="header">
+        <h1 class="title">pagination.js</h1>
+    </header>
+    <div class="container">
+        <section id="section-theme" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Theme</h2>
+            </header>
+            <div class="section__content">
+              <div id="theme-default" class="section__demo"></div>
+              <div id="theme-plain" class="section__demo"></div>
+              <div id="theme-bordered" class="section__demo"></div>
+            </div>
+        </section>
+        <section id="section-layout" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Layout</h2>
+            </header>
+            <div class="section__content">
+                <div id="layout-default" class="section__demo"></div>
+                <div id="layout-prev" class="section__demo"></div>
+                <div id="layout-pager" class="section__demo"></div>
+            </div>
+        </section>
+        <section id="section-page" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Page</h2>
+            </header>
+            <div class="section__content">
+                <div id="page-start" class="section__demo"></div>
+                <div id="page-middle" class="section__demo"></div>
+                <div id="page-last" class="section__demo"></div>
+            </div>
+        </section>
+        <section id="section-size" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Size</h2>
+            </header>
+            <div class="section__content">
+                <div id="size-small" class="section__demo"></div>
+                <div id="size-regular" class="section__demo"></div>
+                <div id="size-large" class="section__demo"></div>
+            </div>
+        </section>
+        <section id="section-limit" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Limit</h2>
+            </header>
+            <div class="section__content">
+                <div id="limit-short" class="section__demo"></div>
+                <div id="limit-average" class="section__demo"></div>
+                <div id="limit-long" class="section__demo"></div>
+            </div>
+        </section>
+        <section id="section-disabled" class="section">
+            <header class="section__header">
+                <h2 class="section__title">Disabled</h2>
+            </header>
+            <div class="section__content">
+                <div id="disabled-default" class="section__demo"></div>
+                <div id="disabled-plain" class="section__demo"></div>
+                <div id="disabled-bordered" class="section__demo"></div>
+            </div>
+        </section>
+    </div>
+    <footer class="footer">
+        <p class="copyright">Copyright &copy; 2024 Yaohaixiao, all right reserved.</p>
+    </footer>
+</main>
+<script src="./pagination.min.js"></script>
+<script type="text/javascript">
+const $default = new Pagination({
+  parent: '#theme-default',
+  total: 187,
+  theme: 'default',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $plain = new Pagination({
+  parent: '#theme-plain',
+  total: 187,
+  theme: 'plain',
+  align: 'left',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $bordered= new Pagination({
+  parent: '#theme-bordered',
+  total: 187,
+  theme: 'bordered',
+  align: 'right',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $full = new Pagination({
+  parent: '#layout-default',
+  total: 187,
+  size: 15,
+  theme: 'default',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $prev = new Pagination({
+  parent: '#layout-prev',
+  total: 187,
+  size: 15,
+  theme: 'plain',
+  layout: ['prev', 'next']
+})
+
+const $pager = new Pagination({
+  parent: '#layout-pager',
+  total: 187,
+  size: 15,
+  theme: 'bordered',
+  layout: ['pager']
+})
+
+const $start = new Pagination({
+  parent: '#page-start',
+  total: 187,
+  size: 15,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $middle = new Pagination({
+  parent: '#page-middle',
+  total: 187,
+  size: 15,
+  page: 5,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $last = new Pagination({
+  parent: '#page-last',
+  total: 187,
+  size: 15,
+  page: 12,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $small = new Pagination({
+  parent: '#size-small',
+  total: 187,
+  size: 10,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $regular = new Pagination({
+  parent: '#size-regular',
+  total: 187,
+  size: 20,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $large = new Pagination({
+  parent: '#size-large',
+  total: 187,
+  size: 30,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
+})
+
+const $short = new Pagination({
+  parent: '#limit-short',
+  total: 287,
+  theme: 'plain',
+  limit: 5,
+  layout: ['prev', 'pager', 'next']
+})
+
+const $average = new Pagination({
+  parent: '#limit-average',
+  total: 287,
+  theme: 'plain',
+  limit: 9,
+  layout: ['prev', 'pager', 'next']
+})
+
+const $long = new Pagination({
+  parent: '#limit-long',
+  total: 287,
+  theme: 'plain',
+  limit: 13,
+  layout: ['prev', 'pager', 'next']
+})
+
+const $normal = new Pagination({
+  parent: '#disabled-default',
+  total: 187,
+  size: 15,
+  theme: 'default',
+  layout: ['prev', 'pager', 'next'],
+  disabled: true
+})
+
+const $usual = new Pagination({
+  parent: '#disabled-plain',
+  total: 187,
+  size: 15,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next'],
+  disabled: true
+})
+
+const $used = new Pagination({
+  parent: '#disabled-bordered',
+  total: 187,
+  size: 15,
+  theme: 'bordered',
+  layout: ['prev', 'pager', 'next'],
+  disabled: true
+})
+</script>
+</body>
+</html>

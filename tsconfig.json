@@ -15,7 +15,7 @@
     "node_modules",
     "./types",
     "./build/**/*.js",
-    "./examples/**/*.js",
+    "./docs/**/*.js",
     "./babel.config.js",
     "./commitlint.config.js",
     "./jest.config.js",

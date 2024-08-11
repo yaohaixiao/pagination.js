@@ -1,4 +1,4 @@
-.main{
+.main {
     margin: 4em;
     padding: 2em;
     box-shadow: 0 0 10px 0 #ddd;
@@ -6,28 +6,32 @@
 }
 
 .header,
-.footer{
-   text-align: center;
-   overflow: hidden;
+.footer {
+    text-align: center;
+    overflow: hidden;
+}
+
+.title {
+    font-size: 2.6em;
 }
 
 .app {
     color: #507afe;
 }
 
-.section{
+.section {
     padding: 16px 0;
     border-bottom: 1px solid #ddd;
 }
 
-.section__title{
+.section__title {
     padding: 0 16px;
 }
 
-.section__demo{
+.section__demo {
     padding: 16px;
 }
 
-.footer{
+.footer {
     padding: 2em;
 }

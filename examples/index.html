@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>pagination.js | Examples</title>
+    <link rel="stylesheet" href="./pagination.min.css" />
+</head>
+<body>
+<div id="pagination-nav"></div>
+<script src="./pagination.min.js"></script>
+<script type="text/javascript">
+const $pagination = new Pagination()
+
+$pagination.$on('created', function() {
+  console.log('$pagination created', this.attr())
+})
+
+$pagination.$on('mounted', function() {
+  console.log('$pagination mounted', this.attr())
+})
+
+$pagination.$on('change', function(page) {
+  console.log('$pagination change', page)
+})
+
+$pagination.$on('refresh', function() {
+  console.log('$pagination refresh', this.attr())
+})
+
+$pagination.$on('destroy', function() {
+  console.log('$pagination destroy', this.attr())
+})
+
+$pagination.$on('reload', function() {
+  console.log('$pagination reload', this.attr())
+})
+
+$pagination.initialize({
+  parent: '#pagination-nav',
+  total: 187,
+  page: 5,
+  theme: 'bordered',
+  layout: ['prev', 'pager', 'next']
+})
+</script>
+</body>
+</html>

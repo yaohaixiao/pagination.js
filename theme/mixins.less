@@ -1,0 +1,19 @@
+@import './font';
+
+/* ====== 字号设置函数 ====== */
+.font_size(@size: @font_size_small) {
+  font-size: @size;
+}
+
+.font_size_small() {
+  .font_size(@font_size_small);
+}
+
+/* ====== 圆角样式设置函数 ====== */
+.radius(@num: 2px) {
+  border-radius: @num;
+}
+
+.radius_small() {
+  .radius(3px);
+}

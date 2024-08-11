@@ -28,6 +28,6 @@ screenshot
 .eslintcache
 
 .husky
-/build
-/src/assets
 /docs/
+/examples/
+/*.min.js

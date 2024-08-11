@@ -121,7 +121,7 @@ options.theme = 'bordered'
 new Pagination(options)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-theme)[https://yaohaixiao.github.io/pagination.js/#section-theme]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-theme
 
 
 ### Layout
@@ -173,7 +173,7 @@ options.layout = ['pager']
 new Pagination(options)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-layout)[https://yaohaixiao.github.io/pagination.js/#section-layout]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-layout
 
 
 ### Page
@@ -196,7 +196,7 @@ const pagination = new Pagination(options)
 pagination.page(3)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-page)[https://yaohaixiao.github.io/pagination.js/#section-page]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-page
 
 
 ### Size
@@ -219,7 +219,7 @@ const pagination = new Pagination(options)
 pagination.size(30)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-size)[https://yaohaixiao.github.io/pagination.js/#section-size]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-size
 
 
 ### Limit
@@ -246,7 +246,7 @@ const pagination = new Pagination(options)
 pagination.limit(7)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-limit)[https://yaohaixiao.github.io/pagination.js/#section-limit]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-limit
 
 
 
@@ -275,7 +275,7 @@ const pagination = new Pagination(options)
 pagination.disabled(false)
 ```
 
-演示地址：(https://yaohaixiao.github.io/pagination.js/#section-disabled)[https://yaohaixiao.github.io/pagination.js/#section-disabled]
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-disabled
 
 
 ### Events

@@ -4,6 +4,7 @@
   "description": "pagination.js - 简单好用的 JavaScript 分页导航组件库。",
   "main": "pagination.min.js",
   "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s",
     "build:lib": "npm run prettier:write && rollup -c build/rollup.config.lib.js --bundleConfigAsCjs",
     "build:api": "npm run prettier:write && rollup -c build/rollup.config.api.js --bundleConfigAsCjs",
     "build:.d.ts": "tsc",

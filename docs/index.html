@@ -1,61 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>pagination.js | 简单好用的 JavaScript 分页导航组件库</title>
-    <link rel="shortcut icon" href="./favicon.ico" />
-    <link rel="stylesheet" href="./normalize.css" />
-    <link rel="stylesheet" href="./pagination.min.css" />
-    <link rel="stylesheet" href="./example.css" />
+  <meta charset="UTF-8">
+  <title>pagination.js | 简单好用的 JavaScript 分页导航组件库</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="keywords" content="pagination.js,JavaScript,Pagination,Toolkit"/>
+  <meta name="description" content="pagination.js - 简单好用的 JavaScript 分页导航组件库"/>
+  <link href="./normalize.css" rel="preload" as="style"/>
+  <link href="./pagination.min.css" rel="preload" as="style"/>
+  <link href="./documentation.css" rel="preload" as="style"/>
+  <link href="./pagination.min.js" rel="preload" as="script"/>
+  <link rel="shortcut icon" href="./favicon.ico"/>
+  <link rel="stylesheet" href="./normalize.css"/>
+  <link rel="stylesheet" href="./pagination.min.css"/>
+  <link rel="stylesheet" href="./documentation.css"/>
 </head>
 <body>
-<main class="main">
-    <header class="header">
-        <h1 class="title"><em class="app">pagination</em>.js</h1>
-    </header>
-    <div class="toolbar">
-        <div class="toolbar__item">
-            <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js">
-                <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
-                    <path d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="toolbar__item">
-            <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js/issues">
-                <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
-                    <path d="M25.5 15c0 0.547-0.453 1-1 1h-3.5c0 1.953-0.422 3.422-1.047 4.531l3.25 3.266c0.391 0.391 0.391 1.016 0 1.406-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-3.094-3.078s-2.047 1.875-4.703 1.875v-14h-2v14c-2.828 0-4.891-2.063-4.891-2.063l-2.859 3.234c-0.203 0.219-0.469 0.328-0.75 0.328-0.234 0-0.469-0.078-0.672-0.25-0.406-0.375-0.438-1-0.078-1.422l3.156-3.547c-0.547-1.078-0.906-2.469-0.906-4.281h-3.5c-0.547 0-1-0.453-1-1s0.453-1 1-1h3.5v-4.594l-2.703-2.703c-0.391-0.391-0.391-1.016 0-1.406s1.016-0.391 1.406 0l2.703 2.703h13.188l2.703-2.703c0.391-0.391 1.016-0.391 1.406 0s0.391 1.016 0 1.406l-2.703 2.703v4.594h3.5c0.547 0 1 0.453 1 1zM18 6h-10c0-2.766 2.234-5 5-5s5 2.234 5 5z"></path>
-                </svg>
-            </a>
-        </div>
-        <div class="toolbar__item">
-            <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js/tags">
-                <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
-                    <path d="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z"></path>
-                </svg>
-            </a>
-        </div>
+<div class="documentation">
+  <div class="toolbar">
+    <div class="toolbar__item">
+      <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js">
+        <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
+          <path
+              d="M12 2c6.625 0 12 5.375 12 12 0 5.297-3.437 9.797-8.203 11.391-0.609 0.109-0.828-0.266-0.828-0.578 0-0.391 0.016-1.687 0.016-3.297 0-1.125-0.375-1.844-0.812-2.219 2.672-0.297 5.484-1.313 5.484-5.922 0-1.313-0.469-2.375-1.234-3.219 0.125-0.313 0.531-1.531-0.125-3.187-1-0.313-3.297 1.234-3.297 1.234-0.953-0.266-1.984-0.406-3-0.406s-2.047 0.141-3 0.406c0 0-2.297-1.547-3.297-1.234-0.656 1.656-0.25 2.875-0.125 3.187-0.766 0.844-1.234 1.906-1.234 3.219 0 4.594 2.797 5.625 5.469 5.922-0.344 0.313-0.656 0.844-0.766 1.609-0.688 0.313-2.438 0.844-3.484-1-0.656-1.141-1.844-1.234-1.844-1.234-1.172-0.016-0.078 0.734-0.078 0.734 0.781 0.359 1.328 1.75 1.328 1.75 0.703 2.141 4.047 1.422 4.047 1.422 0 1 0.016 1.937 0.016 2.234 0 0.313-0.219 0.688-0.828 0.578-4.766-1.594-8.203-6.094-8.203-11.391 0-6.625 5.375-12 12-12zM4.547 19.234c0.031-0.063-0.016-0.141-0.109-0.187-0.094-0.031-0.172-0.016-0.203 0.031-0.031 0.063 0.016 0.141 0.109 0.187 0.078 0.047 0.172 0.031 0.203-0.031zM5.031 19.766c0.063-0.047 0.047-0.156-0.031-0.25-0.078-0.078-0.187-0.109-0.25-0.047-0.063 0.047-0.047 0.156 0.031 0.25 0.078 0.078 0.187 0.109 0.25 0.047zM5.5 20.469c0.078-0.063 0.078-0.187 0-0.297-0.063-0.109-0.187-0.156-0.266-0.094-0.078 0.047-0.078 0.172 0 0.281s0.203 0.156 0.266 0.109zM6.156 21.125c0.063-0.063 0.031-0.203-0.063-0.297-0.109-0.109-0.25-0.125-0.313-0.047-0.078 0.063-0.047 0.203 0.063 0.297 0.109 0.109 0.25 0.125 0.313 0.047zM7.047 21.516c0.031-0.094-0.063-0.203-0.203-0.25-0.125-0.031-0.266 0.016-0.297 0.109s0.063 0.203 0.203 0.234c0.125 0.047 0.266 0 0.297-0.094zM8.031 21.594c0-0.109-0.125-0.187-0.266-0.172-0.141 0-0.25 0.078-0.25 0.172 0 0.109 0.109 0.187 0.266 0.172 0.141 0 0.25-0.078 0.25-0.172zM8.937 21.438c-0.016-0.094-0.141-0.156-0.281-0.141-0.141 0.031-0.234 0.125-0.219 0.234 0.016 0.094 0.141 0.156 0.281 0.125s0.234-0.125 0.219-0.219z"></path>
+        </svg>
+      </a>
     </div>
-    <div class="cdn">
-        <p class="cdn-css">&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.css" /&gt;</p>
-        <p class="cdn-js">&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.js"&gt;&lt;/script&gt;</p>
+    <div class="toolbar__item">
+      <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js/issues">
+        <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
+          <path
+              d="M25.5 15c0 0.547-0.453 1-1 1h-3.5c0 1.953-0.422 3.422-1.047 4.531l3.25 3.266c0.391 0.391 0.391 1.016 0 1.406-0.187 0.203-0.453 0.297-0.703 0.297s-0.516-0.094-0.703-0.297l-3.094-3.078s-2.047 1.875-4.703 1.875v-14h-2v14c-2.828 0-4.891-2.063-4.891-2.063l-2.859 3.234c-0.203 0.219-0.469 0.328-0.75 0.328-0.234 0-0.469-0.078-0.672-0.25-0.406-0.375-0.438-1-0.078-1.422l3.156-3.547c-0.547-1.078-0.906-2.469-0.906-4.281h-3.5c-0.547 0-1-0.453-1-1s0.453-1 1-1h3.5v-4.594l-2.703-2.703c-0.391-0.391-0.391-1.016 0-1.406s1.016-0.391 1.406 0l2.703 2.703h13.188l2.703-2.703c0.391-0.391 1.016-0.391 1.406 0s0.391 1.016 0 1.406l-2.703 2.703v4.594h3.5c0.547 0 1 0.453 1 1zM18 6h-10c0-2.766 2.234-5 5-5s5 2.234 5 5z"></path>
+        </svg>
+      </a>
     </div>
-    <div class="download">
-        <a class="download__button" download="main.zip" href="https://github.com/yaohaixiao/pagination.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a>
+    <div class="toolbar__item">
+      <a class="toolbar__anchor" href="https://github.com/yaohaixiao/pagination.js/tags">
+        <svg class="toolbar__svg" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 28">
+          <path
+              d="M7 7c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM23.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578s-1.047-0.219-1.406-0.578l-11.172-11.188c-0.797-0.781-1.422-2.297-1.422-3.406v-6.5c0-1.094 0.906-2 2-2h6.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422zM29.672 16c0 0.531-0.219 1.047-0.578 1.406l-7.672 7.688c-0.375 0.359-0.891 0.578-1.422 0.578-0.812 0-1.219-0.375-1.75-0.922l7.344-7.344c0.359-0.359 0.578-0.875 0.578-1.406s-0.219-1.047-0.578-1.422l-11.172-11.156c-0.797-0.797-2.312-1.422-3.422-1.422h3.5c1.109 0 2.625 0.625 3.422 1.422l11.172 11.156c0.359 0.375 0.578 0.891 0.578 1.422z"></path>
+        </svg>
+      </a>
     </div>
-    <div class="container">
-        <section id="section-theme" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Theme</h2>
-            </header>
-            <div class="section__content">
-              <div class="section__preview">
-                  <div id="theme-default" class="section__demo"></div>
-                  <div id="theme-plain" class="section__demo"></div>
-                  <div id="theme-bordered" class="section__demo"></div>
-              </div>
-              <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+  </div>
+  <header class="header">
+    <h1 class="header__title"><em class="header__app">pagination</em>.js</h1>
+    <p class="header__tagline">简单好用的 JavaScript 分页导航组件库</p>
+  </header>
+  <div class="cdn">
+    <p class="cdn__text">&lt;link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.css" /&gt;</p>
+    <p class="cdn__text">&lt;script src="https://cdn.jsdelivr.net/gh/yaohaixiao/pagination.js/pagination.min.js"&gt;&lt;/script&gt;</p>
+  </div>
+  <div class="download">
+    <a class="download__button" download="main.zip"
+       href="https://github.com/yaohaixiao/pagination.js/archive/refs/heads/main.zip" target="_blank">Download Zip</a>
+  </div>
+  <main class="main">
+    <section id="section-theme" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Theme</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="theme-default" class="preview__view"></div>
+          <div id="theme-plain" class="preview__view"></div>
+          <div id="theme-bordered" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#theme-plain',
   total: 187,
   // theme 可选值：
@@ -66,21 +80,21 @@
   align: 'left',
   layout: ['prev', 'pager', 'next']
 })</code></pre>
-              </div>
-            </div>
-        </section>
-        <section id="section-layout" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Layout</h2>
-            </header>
-            <div class="section__content">
-                <div class="section__preview">
-                    <div id="layout-default" class="section__demo"></div>
-                    <div id="layout-prev" class="section__demo"></div>
-                    <div id="layout-pager" class="section__demo"></div>
-                </div>
-                <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+        </div>
+      </div>
+    </section>
+    <section id="section-layout" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Layout</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="layout-default" class="preview__view"></div>
+          <div id="layout-prev" class="preview__view"></div>
+          <div id="layout-pager" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#layout-default',
   total: 187,
   size: 15,
@@ -91,21 +105,21 @@
   // ['pager'] - 默认主题，显示数值按钮
   <strong class="highlight">layout: ['prev', 'pager', 'next']</strong>
 })</code></pre>
-                </div>
-            </div>
-        </section>
-        <section id="section-page" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Page</h2>
-            </header>
-            <div class="section__content">
-                <div class="section__preview">
-                    <div id="page-start" class="section__demo"></div>
-                    <div id="page-middle" class="section__demo"></div>
-                    <div id="page-last" class="section__demo"></div>
-                </div>
-                <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+        </div>
+      </div>
+    </section>
+    <section id="section-page" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Page</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="page-start" class="preview__view"></div>
+          <div id="page-middle" class="preview__view"></div>
+          <div id="page-last" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#page-middle',
   total: 187,
   size: 15,
@@ -115,21 +129,21 @@
   theme: 'plain',
   layout: ['prev', 'pager', 'next']
 })</code></pre>
-                </div>
-            </div>
-        </section>
-        <section id="section-size" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Size</h2>
-            </header>
-            <div class="section__content">
-                <div class="section__preview">
-                    <div id="size-small" class="section__demo"></div>
-                    <div id="size-regular" class="section__demo"></div>
-                    <div id="size-large" class="section__demo"></div>
-                </div>
-                <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+        </div>
+      </div>
+    </section>
+    <section id="section-size" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Size</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="size-small" class="preview__view"></div>
+          <div id="size-regular" class="preview__view"></div>
+          <div id="size-large" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#size-large',
   total: 187,
   // size 可选值范围：1 ~ 187
@@ -138,21 +152,21 @@
   theme: 'plain',
   layout: ['prev', 'pager', 'next']
 })</code></pre>
-                </div>
-            </div>
-        </section>
-        <section id="section-limit" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Limit</h2>
-            </header>
-            <div class="section__content">
-                <div class="section__preview">
-                    <div id="limit-short" class="section__demo"></div>
-                    <div id="limit-average" class="section__demo"></div>
-                    <div id="limit-long" class="section__demo"></div>
-                </div>
-                <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+        </div>
+      </div>
+    </section>
+    <section id="section-limit" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Limit</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="limit-short" class="preview__view"></div>
+          <div id="limit-average" class="preview__view"></div>
+          <div id="limit-long" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#limit-long',
   total: 287,
   theme: 'plain',
@@ -162,21 +176,21 @@
   size: 25,
   layout: ['prev', 'pager', 'next']
 })</code></pre>
-                </div>
-            </div>
-        </section>
-        <section id="section-disabled" class="section">
-            <header class="section__header">
-                <h2 class="section__title">Disabled</h2>
-            </header>
-            <div class="section__content">
-                <div class="section__preview">
-                    <div id="disabled-default" class="section__demo"></div>
-                    <div id="disabled-plain" class="section__demo"></div>
-                    <div id="disabled-bordered" class="section__demo"></div>
-                </div>
-                <div class="section__usage">
-<pre class="section__pre"><code class="section__code">new Pagination({
+        </div>
+      </div>
+    </section>
+    <section id="section-disabled" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Disabled</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="disabled-default" class="preview__view"></div>
+          <div id="disabled-plain" class="preview__view"></div>
+          <div id="disabled-bordered" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
   parent: '#disabled-plain',
   total: 187,
   size: 15,
@@ -184,167 +198,238 @@
   layout: ['prev', 'pager', 'next'],
   <strong class="highlight">disabled: true</strong>
 })</code></pre>
-                </div>
-            </div>
-        </section>
-    </div>
-    <footer class="footer">
-        <p class="copyright">Copyright &copy; 2024 <a href="https://juejin.cn/user/422631050054807">Yaohaixiao</a>, all right reserved.</p>
-        <p>Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT License</a></p>
-        <p>Documentation licensed under&nbsp;<a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
-        <p><a href="https://github.com/yaohaixiao/pagination.js">View on GitHub</a> · <a href="https://github.com/yaohaixiao/pagination.js/issues">Issues</a></p>
-    </footer>
-</main>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__paragraph">Copyright &copy; 2024 <a href="https://juejin.cn/user/422631050054807">Yaohaixiao</a>,
+      all right reserved.</p>
+    <p class="footer__paragraph">Code licensed under&nbsp;<a href="http://opensource.org/licenses/mit-license.html">MIT
+      License</a></p>
+    <p class="footer__paragraph">Documentation licensed under&nbsp;<a
+        href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></p>
+    <p class="footer__paragraph"><a href="https://github.com/yaohaixiao/pagination.js">View on GitHub</a> · <a
+        href="https://github.com/yaohaixiao/pagination.js/issues">Issues</a></p>
+  </footer>
+</div>
 <script src="./pagination.min.js"></script>
 <script type="text/javascript">
-const $default = new Pagination({
-  parent: '#theme-default',
-  total: 187,
-  theme: 'default',
-  layout: ['prev', 'pager', 'next']
-})
+  const $default = new Pagination({
+    parent: '#theme-default',
+    total: 187,
+    theme: 'default',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $plain = new Pagination({
-  parent: '#theme-plain',
-  total: 187,
-  theme: 'plain',
-  align: 'left',
-  layout: ['prev', 'pager', 'next']
-})
+  const $plain = new Pagination({
+    parent: '#theme-plain',
+    total: 187,
+    theme: 'plain',
+    align: 'left',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $bordered= new Pagination({
-  parent: '#theme-bordered',
-  total: 187,
-  theme: 'bordered',
-  align: 'right',
-  layout: ['prev', 'pager', 'next']
-})
+  const $bordered = new Pagination({
+    parent: '#theme-bordered',
+    total: 187,
+    theme: 'bordered',
+    align: 'right',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $full = new Pagination({
-  parent: '#layout-default',
-  total: 187,
-  size: 15,
-  theme: 'default',
-  layout: ['prev', 'pager', 'next']
-})
+  const $full = new Pagination({
+    parent: '#layout-default',
+    total: 187,
+    size: 15,
+    theme: 'default',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $prev = new Pagination({
-  parent: '#layout-prev',
-  total: 187,
-  size: 15,
-  theme: 'plain',
-  layout: ['prev', 'next']
-})
+  const $prev = new Pagination({
+    parent: '#layout-prev',
+    total: 187,
+    size: 15,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'next'
+    ]
+  })
 
-const $pager = new Pagination({
-  parent: '#layout-pager',
-  total: 187,
-  size: 15,
-  theme: 'bordered',
-  layout: ['pager']
-})
+  const $pager = new Pagination({
+    parent: '#layout-pager',
+    total: 187,
+    size: 15,
+    theme: 'bordered',
+    layout: [ 'pager' ]
+  })
 
-const $start = new Pagination({
-  parent: '#page-start',
-  total: 187,
-  size: 15,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $start = new Pagination({
+    parent: '#page-start',
+    total: 187,
+    size: 15,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $middle = new Pagination({
-  parent: '#page-middle',
-  total: 187,
-  size: 15,
-  page: 5,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $middle = new Pagination({
+    parent: '#page-middle',
+    total: 187,
+    size: 15,
+    page: 5,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $last = new Pagination({
-  parent: '#page-last',
-  total: 187,
-  size: 15,
-  page: 12,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $last = new Pagination({
+    parent: '#page-last',
+    total: 187,
+    size: 15,
+    page: 12,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $small = new Pagination({
-  parent: '#size-small',
-  total: 187,
-  size: 10,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $small = new Pagination({
+    parent: '#size-small',
+    total: 187,
+    size: 10,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $regular = new Pagination({
-  parent: '#size-regular',
-  total: 187,
-  size: 20,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $regular = new Pagination({
+    parent: '#size-regular',
+    total: 187,
+    size: 20,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $large = new Pagination({
-  parent: '#size-large',
-  total: 187,
-  size: 30,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next']
-})
+  const $large = new Pagination({
+    parent: '#size-large',
+    total: 187,
+    size: 30,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $short = new Pagination({
-  parent: '#limit-short',
-  total: 287,
-  theme: 'plain',
-  limit: 5,
-  layout: ['prev', 'pager', 'next']
-})
+  const $short = new Pagination({
+    parent: '#limit-short',
+    total: 287,
+    theme: 'plain',
+    limit: 5,
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $average = new Pagination({
-  parent: '#limit-average',
-  total: 287,
-  theme: 'plain',
-  limit: 7,
-  layout: ['prev', 'pager', 'next']
-})
+  const $average = new Pagination({
+    parent: '#limit-average',
+    total: 287,
+    theme: 'plain',
+    limit: 7,
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $long = new Pagination({
-  parent: '#limit-long',
-  total: 287,
-  theme: 'plain',
-  limit: 9,
-  size: 25,
-  layout: ['prev', 'pager', 'next']
-})
+  const $long = new Pagination({
+    parent: '#limit-long',
+    total: 287,
+    theme: 'plain',
+    limit: 9,
+    size: 25,
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
 
-const $normal = new Pagination({
-  parent: '#disabled-default',
-  total: 187,
-  size: 15,
-  theme: 'default',
-  layout: ['prev', 'pager', 'next'],
-  disabled: true
-})
+  const $normal = new Pagination({
+    parent: '#disabled-default',
+    total: 187,
+    size: 15,
+    theme: 'default',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ],
+    disabled: true
+  })
 
-const $usual = new Pagination({
-  parent: '#disabled-plain',
-  total: 187,
-  size: 15,
-  theme: 'plain',
-  layout: ['prev', 'pager', 'next'],
-  disabled: true
-})
+  const $usual = new Pagination({
+    parent: '#disabled-plain',
+    total: 187,
+    size: 15,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ],
+    disabled: true
+  })
 
-const $used = new Pagination({
-  parent: '#disabled-bordered',
-  total: 187,
-  size: 15,
-  theme: 'bordered',
-  layout: ['prev', 'pager', 'next'],
-  disabled: true
-})
+  const $used = new Pagination({
+    parent: '#disabled-bordered',
+    total: 187,
+    size: 15,
+    theme: 'bordered',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ],
+    disabled: true
+  })
 </script>
 </body>
 </html>

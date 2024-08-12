@@ -1,10 +1,7 @@
-.main {
-    position: relative;
-    z-index: 1;
-    margin: 4em auto;
-    box-shadow: 0 0 10px 0 #ddd;
-    max-width: 1100px;
-    overflow: hidden;
+html,
+body {
+    font-size: 14px;
+    font-family: Consolas, Arial, Helvetica, 'Helvetica Neue', sans-serif;
 }
 
 a:link,
@@ -16,6 +13,19 @@ a:hover {
 
 a:hover {
     text-decoration: underline;
+}
+
+.highlight {
+    color: #507afe;
+}
+
+.documentation {
+    position: relative;
+    z-index: 1;
+    margin: 5em auto;
+    box-shadow: 0 0 10px 0 #ddd;
+    max-width: 1100px;
+    overflow: hidden;
 }
 
 .header,
@@ -31,11 +41,20 @@ a:hover {
     padding: 3em 0;
 }
 
-.title {
-    font-size: 2.6em;
+.header__title {
+    font-size: 3em;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
 }
 
-.app {
+.header__tagline {
+    margin: 0 auto;
+    width: 80%;
+    font-size: 1.4em;
+    padding: 16px 0;
+    overflow: hidden;
+}
+
+.header__app {
     color: #507afe;
 }
 
@@ -44,6 +63,7 @@ a:hover {
     z-index: 2;
     top: 16px;
     right: 16px;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -68,7 +88,6 @@ a:hover {
     text-decoration: none;
 }
 
-.highlight,
 .toolbar__anchor:hover {
     color: #507afe;
 }
@@ -82,7 +101,6 @@ a:hover {
     background-color: #f5f7fa;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
-    font-family: 'Courier New', Consolas, Arial, Helvetica, 'Helvetica Neue', sans-serif;
 }
 
 .download {
@@ -110,20 +128,16 @@ a:hover {
     text-decoration: none;
 }
 
-.container {
+.main {
     margin: 0 auto;
     padding: 2em;
     overflow: hidden;
 }
 
-.title,
-.section__title {
-    font-family: Georgia, Arial, Helvetica, sans-serif;
-}
-
 .section__title {
     margin: 0 auto;
     padding: 1em 16px;
+    font-family: Georgia, Arial, Helvetica, sans-serif;
 }
 
 .section__content {
@@ -134,12 +148,12 @@ a:hover {
     overflow: hidden;
 }
 
-.section__preview {
+.preview {
     padding: 16px 0;
 }
 
-.section__preview,
-.section__usage {
+.preview,
+.usage {
     float: left;
     margin: 0;
     width: 50%;
@@ -147,30 +161,33 @@ a:hover {
     overflow: hidden;
 }
 
-.section__pre,
-.section__usage,
-.section__demo {
+.usage,
+.usage__pre,
+.preview__view {
     padding: 16px;
 }
 
-.section__pre {
-    margin: 0 auto;
-    padding: 16px 0;
-}
-
-.section__usage {
+.usage {
     border-left: 1px solid #ddd;
 }
 
-.section__code {
-    line-height: 125%;
+.usage__pre {
+    margin: 0 auto;
+}
+
+.usage__code {
+    line-height: 150%;
     color: #555;
-    font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial,
-    sans-serif;
+    font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial, sans-serif;
 }
 
 .footer {
     padding: 2em 2em 3em;
+}
+
+.footer__paragraph {
+    font-family: Consolas, Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 /* ===== Scrollbar ===== */
@@ -200,4 +217,21 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 760px) {
+    .documentation {
+        margin: 0 auto;
+    }
+
+    .preview,
+    .usage {
+        float: none;
+        width: 100%;
+    }
+
+    .usage {
+        border-top: 1px solid #ddd;
+        border-left: none;
+    }
 }

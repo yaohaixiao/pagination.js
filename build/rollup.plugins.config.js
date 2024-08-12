@@ -3,6 +3,7 @@ import { nodeResolve } from '@rollup/plugin-node-resolve'
 import commonjs from '@rollup/plugin-commonjs'
 import terser from '@rollup/plugin-terser'
 import postcss from 'rollup-plugin-postcss'
+import cssnano from 'cssnano'
 import path from 'path'
 import less from 'less'
 
@@ -11,6 +12,9 @@ const PLUGINS_CONFIG = [
     entries: [{ find: '@', replacement: path.resolve(__dirname, '../') }]
   }),
   postcss({
+    plugins: [
+      cssnano() // 使用 cssnano 进行压缩
+    ],
     extract: true,
     // 将 CSS 提取到一个单独的文件
     extensions: ['.less'],

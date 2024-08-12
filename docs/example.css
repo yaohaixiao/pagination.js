@@ -1,7 +1,8 @@
 .main {
-    margin: 4em;
+    margin: 4em auto;
     padding: 2em;
     box-shadow: 0 0 10px 0 #ddd;
+    max-width: 1100px;
     overflow: hidden;
 }
 
@@ -33,6 +34,11 @@ a:hover {
 .section {
     padding: 16px 0;
     border-bottom: 1px solid #ddd;
+}
+
+.title,
+.section__title{
+   font-family: Georgia, Arial, Helvetica, sans-serif;
 }
 
 .section__title {

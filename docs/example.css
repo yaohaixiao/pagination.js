@@ -147,14 +147,15 @@ a:hover {
     overflow: hidden;
 }
 
-.section__pre {
-    margin: 0 auto;
-}
-
 .section__pre,
 .section__usage,
 .section__demo {
     padding: 16px;
+}
+
+.section__pre {
+    margin: 0 auto;
+    padding: 16px 0;
 }
 
 .section__usage {

@@ -1,237 +1,237 @@
 html,
 body {
-    font-size: 14px;
-    font-family: Consolas, Arial, Helvetica, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+  font-family: Consolas, Arial, Helvetica, 'Helvetica Neue', sans-serif;
 }
 
 a:link,
 a:visited,
 a:hover {
-    color: #507afe;
-    text-decoration: none;
+  color: #507afe;
+  text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .highlight {
-    color: #507afe;
+  color: #507afe;
 }
 
 .documentation {
-    position: relative;
-    z-index: 1;
-    margin: 5em auto;
-    box-shadow: 0 0 10px 0 #ddd;
-    max-width: 1100px;
-    overflow: hidden;
+  position: relative;
+  z-index: 1;
+  margin: 5em auto;
+  box-shadow: 0 0 10px 0 #ddd;
+  max-width: 1100px;
+  overflow: hidden;
 }
 
 .header,
 .cdn,
 .download,
 .footer {
-    text-align: center;
-    padding: 2em 0;
-    overflow: hidden;
+  text-align: center;
+  padding: 2em 0;
+  overflow: hidden;
 }
 
 .header {
-    padding: 3em 0;
+  padding: 3em 0;
 }
 
 .header__title {
-    font-size: 3em;
-    font-family: Georgia, Arial, Helvetica, sans-serif;
+  font-size: 3em;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
 }
 
 .header__tagline {
-    margin: 0 auto;
-    width: 80%;
-    font-size: 1.4em;
-    padding: 16px 0;
-    overflow: hidden;
+  margin: 0 auto;
+  width: 80%;
+  font-size: 1.4em;
+  padding: 16px 0;
+  overflow: hidden;
 }
 
 .header__app {
-    color: #507afe;
+  color: #507afe;
 }
 
 .toolbar {
-    position: absolute;
-    z-index: 2;
-    top: 16px;
-    right: 16px;
-    margin: 0;
-    overflow: hidden;
+  position: absolute;
+  z-index: 2;
+  top: 16px;
+  right: 16px;
+  margin: 0;
+  overflow: hidden;
 }
 
 .toolbar__item,
 .toolbar__svg {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    line-height: 24px;
-    text-align: center;
-    overflow: hidden;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  overflow: hidden;
 }
 
 .toolbar__item {
-    padding: 0 8px;
+  padding: 0 8px;
 }
 
 .toolbar__anchor:link,
 .toolbar__anchor:visited,
 .toolbar__anchor:hover {
-    color: #999;
-    text-decoration: none;
+  color: #999;
+  text-decoration: none;
 }
 
 .toolbar__anchor:hover {
-    color: #507afe;
+  color: #507afe;
 }
 
 .toolbar__svg {
-    vertical-align: middle;
-    fill: currentcolor;
+  vertical-align: middle;
+  fill: currentcolor;
 }
 
 .cdn {
-    background-color: #f5f7fa;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
+  background-color: #f5f7fa;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
 }
 
 .download {
-    margin: 0 auto;
-    padding: 3em 0 0;
-    text-align: center;
-    overflow: hidden;
+  margin: 0 auto;
+  padding: 3em 0 0;
+  text-align: center;
+  overflow: hidden;
 }
 
 .download__button {
-    display: inline-block;
-    border-radius: 4px;
-    padding: 14px 29px;
-    font-size: 18px;
-    font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial,
-    sans-serif;
-    background-color: #507afe;
-    overflow: hidden;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 14px 29px;
+  font-size: 18px;
+  font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial,
+  sans-serif;
+  background-color: #507afe;
+  overflow: hidden;
 }
 
 .download__button:link,
 .download__button:visited,
 .download__button:hover {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
 
 .main {
-    margin: 0 auto;
-    padding: 2em;
-    overflow: hidden;
+  margin: 0 auto;
+  padding: 2em;
+  overflow: hidden;
 }
 
 .section__title {
-    margin: 0 auto;
-    padding: 1em 16px;
-    font-family: Georgia, Arial, Helvetica, sans-serif;
+  margin: 0 auto;
+  padding: 1em 16px;
+  font-family: Georgia, Arial, Helvetica, sans-serif;
 }
 
 .section__content {
-    margin: 0 auto;
-    padding: 24px 0;
-    border-top: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-    overflow: hidden;
+  margin: 0 auto;
+  padding: 24px 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
 }
 
 .preview {
-    padding: 16px 0;
+  padding: 16px 0;
 }
 
 .preview,
 .usage {
-    float: left;
-    margin: 0;
-    width: 50%;
-    box-sizing: border-box;
-    overflow: hidden;
+  float: left;
+  margin: 0;
+  width: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 .usage,
 .usage__pre,
 .preview__view {
-    padding: 16px;
+  padding: 16px;
 }
 
 .usage {
-    border-left: 1px solid #ddd;
+  border-left: 1px solid #ddd;
 }
 
 .usage__pre {
-    margin: 0 auto;
+  margin: 0 auto;
 }
 
 .usage__code {
-    line-height: 150%;
-    color: #555;
-    font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial, sans-serif;
+  line-height: 150%;
+  color: #555;
+  font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial, sans-serif;
 }
 
 .footer {
-    padding: 2em 2em 3em;
+  padding: 2em 2em 3em;
 }
 
 .footer__paragraph {
-    font-family: Consolas, Arial, Helvetica, sans-serif;
-    font-size: 16px;
+  font-family: Consolas, Arial, Helvetica, sans-serif;
+  font-size: 16px;
 }
 
 /* ===== Scrollbar ===== */
 ::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
-    -webkit-border-radius: 5px;
+  width: 7px;
+  height: 7px;
+  -webkit-border-radius: 5px;
 }
 
 ::-webkit-scrollbar-track-piece {
-    -webkit-border-radius: 5px;
+  -webkit-border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
-    background-color: rgba(0, 0, 0, 0.25);
-    -webkit-border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.25);
+  -webkit-border-radius: 5px;
 }
 
 ::-webkit-scrollbar:hover {
-    background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(0, 0, 0, 0.35);
+  background-color: rgba(0, 0, 0, 0.35);
 }
 
 @media (max-width: 760px) {
-    .documentation {
-        margin: 0 auto;
-    }
+  .documentation {
+    margin: 0 auto;
+  }
 
-    .preview,
-    .usage {
-        float: none;
-        width: 100%;
-    }
+  .preview,
+  .usage {
+    float: none;
+    width: 100%;
+  }
 
-    .usage {
-        border-top: 1px solid #ddd;
-        border-left: none;
-    }
+  .usage {
+    border-top: 1px solid #ddd;
+    border-left: none;
+  }
 }

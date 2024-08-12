@@ -134,6 +134,10 @@ a:hover {
     overflow: hidden;
 }
 
+.section__preview {
+    padding: 16px 0;
+}
+
 .section__preview,
 .section__usage {
     float: left;
@@ -141,6 +145,10 @@ a:hover {
     width: 50%;
     box-sizing: border-box;
     overflow: hidden;
+}
+
+.section__pre {
+    margin: 0 auto;
 }
 
 .section__pre,
@@ -154,7 +162,7 @@ a:hover {
 }
 
 .section__code {
-    line-height: 150%;
+    line-height: 125%;
     color: #555;
     font-family: 'Source Code Pro', Consolas, Georgia, Monaco, monospace, Arial,
     sans-serif;

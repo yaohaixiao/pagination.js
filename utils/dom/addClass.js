@@ -1,18 +1,20 @@
+import isHTMLElement from '@/utils/types/isHTMLElement'
 import hasClass from '@/utils/dom/hasClass'
 
 /**
  * 给 DOM 节点添加名为 className 的样式
  * ========================================================================
  * @method addClass
+ * @see https://developer.mozilla.org/zh-CN/docs/Web/API/Element/classList
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/DOMTokenList/add
  * @param {HTMLElement} el - DOM 节点
  * @param {String} className - 样式名称
- * @returns {Boolean}
  */
 const addClass = (el, className) => {
   let classList
   let allClass
 
-  if (hasClass(el, className)) {
+  if (!isHTMLElement(el) || hasClass(el, className)) {
     return false
   }
 

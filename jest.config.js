@@ -6,7 +6,7 @@
  */
 module.exports = {
   moduleFileExtensions: ['js'],
-  testMatch: ['**/tests/*.spec.(js)'],
+  testMatch: ['**/tests/**/*.spec.(js)'],
   transform: {
     '^.+\\.js$': './node_modules/babel-jest'
   },
@@ -21,7 +21,7 @@ module.exports = {
       './node_modules/jest-html-reporter',
       {
         pageTitle: 'pagination.js Unit Test Report',
-        outputPath: './report/unit/index.html',
+        outputPath: './report/index.html',
         includeFailureMsg: true
       }
     ]

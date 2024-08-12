@@ -13,6 +13,8 @@
     "lint:fix": "eslint \"./**/*.js\" --cache --fix",
     "prettier:check": "npx prettier --check \"./**/*.(js|less)\"",
     "prettier:write": "npx prettier --write \"./**/*.(js|less)\"",
+    "test:unit": "jest --config jest.config.js",
+    "test": "npm run lint:fix && npm run prettier:write && npm run test:unit",
     "prepare": "husky install"
   },
   "repository": {

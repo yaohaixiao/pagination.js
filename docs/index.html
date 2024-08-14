@@ -132,6 +132,33 @@
         </div>
       </div>
     </section>
+    <section id="section-prev" class="section">
+      <header class="section__header">
+        <h2 class="section__title">PrevText & NextPrev</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="prev-full-icon" class="preview__view"></div>
+          <div id="prev-full-text" class="preview__view"></div>
+          <div id="prev-only-icon" class="preview__view"></div>
+          <div id="prev-only-text" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
+  parent: '#prev-full-text',
+  total: 187,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next'],
+  // prevText: false(默认值) - 默认显示箭头图标
+  // prevText: '上一页' - 设置显示文字
+  <strong class="highlight">prevText: '上一页'</strong>,
+  // nextText: false(默认值) - 默认显示箭头图标
+  // nextText: '下一页' - 设置显示文字
+  <strong class="highlight">nextText: '下一页'</strong>
+})</code></pre>
+        </div>
+      </div>
+    </section>
     <section id="section-total" class="section">
       <header class="section__header">
         <h2 class="section__title">Total</h2>
@@ -359,6 +386,52 @@
     size: 15,
     theme: 'bordered',
     layout: [ 'pager' ]
+  })
+
+  const $prevFullIcon = new Pagination({
+    parent: '#prev-full-icon',
+    total: 187,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $prevFullText = new Pagination({
+    parent: '#prev-full-text',
+    total: 187,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ],
+    prevText: 'PREV',
+    nextText: 'NEXT'
+  })
+
+  const $prevOnlyIcon = new Pagination({
+    parent: '#prev-only-icon',
+    total: 187,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'next'
+    ]
+  })
+
+  const $prevOnlyText = new Pagination({
+    parent: '#prev-only-text',
+    total: 187,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'next'
+    ],
+    prevText: '上一页',
+    nextText: '下一页'
   })
 
   const $sixty = new Pagination({

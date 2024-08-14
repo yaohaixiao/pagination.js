@@ -126,6 +126,66 @@ new Pagination(options)
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-theme
 
 
+### Align
+
+pagination.js 支持导航对齐方式配置，目前支持 justify、left 和 right 3 种主题。
+
+#### justify
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+// 默认值，不设置就是 justify 居中对齐
+options.align = 'justify'
+options.total = 128
+
+var $pagination = new Pagination(options)
+
+// 或者使用 align() 方法设置
+$pagination.align('justify')
+```
+
+#### left
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 128
+options.align = 'left'
+
+var $pagination = new Pagination(options)
+
+// 或者使用 align() 方法设置
+$pagination.align('left')
+```
+
+#### bordered theme
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 128
+options.theme = 'right'
+
+var $pagination = new Pagination(options)
+
+// 或者使用 align() 方法设置
+$pagination.align('right')
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-align
+
+
+
 ### Layout
 
 pagination.js 支持配置导航按钮布局配置，支持上/下一页导航和数字导航的布局组合配置。
@@ -176,6 +236,28 @@ new Pagination(options)
 ```
 
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-layout
+
+
+### Total
+
+pagination.js 可以配置 total 参数，用来计算当前导航的总页数量。
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 60
+
+const pagination = new Pagination(options)
+
+// 或者通过 total() 方法设置
+pagination.total(3)
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-total
+
 
 
 ### Page

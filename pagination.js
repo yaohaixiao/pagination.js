@@ -445,15 +445,14 @@ class Pagination {
     const prevText = this.attr('prevText')
     const prevClassName = ['pagination__prev', `is-${theme}`]
     const prevChildren = []
-    const prevIcon = this.attr('prevIcon')
 
     // 绘制上一页
-    if (prevText) {
+    if (isString(prevText) && prevText) {
       // 创建文本内容
       prevClassName.push('is-textual')
       prevChildren.push(text(prevText))
     } else {
-      if (prevIcon) {
+      if (isBoolean(prevText)) {
         // 上一页图标
         let iconPrev =
           '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="pagination__svg svg-prev"><polygon fill-rule="evenodd" points="9.414 12 16.707 19.293 15.293 20.707 6.586 12 15.293 3.293 16.707 4.707"></polygon></svg>'
@@ -495,15 +494,14 @@ class Pagination {
     const nextText = this.attr('nextText')
     const nextClassName = ['pagination__next', `is-${theme}`]
     const nextChildren = []
-    const nextIcon = this.attr('nextIcon')
 
     // 绘制下一页
-    if (nextText) {
+    if (isString(nextText) && nextText) {
       // 创建文本内容
       nextClassName.push('is-textual')
       nextChildren.push(text(nextText))
     } else {
-      if (nextIcon) {
+      if (isBoolean(nextText)) {
         // 上一页图标
         let iconNext =
           '<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="pagination__svg svg-next"><polygon fill-rule="evenodd" points="14.586 12 7.293 4.707 8.707 3.293 17.414 12 8.707 20.707 7.293 19.293"></polygon></svg>'
@@ -672,7 +670,7 @@ class Pagination {
     const $pages = createElement(
       'ul',
       {
-        className: `pagination__list is-${theme}`
+        className: `pagination__list theme-${theme}`
       },
       [$fragment]
     )
@@ -800,7 +798,7 @@ class Pagination {
     const $el = createElement(
       'div',
       {
-        className: `pagination is-${theme} align_${align}`
+        className: `pagination theme-${theme} align_${align}`
       },
       [$fragment]
     )
@@ -1068,10 +1066,8 @@ Pagination.DEFAULTS = (() => {
     theme: 'default',
     align: 'justify',
     layout: ['prev', 'pager', 'next'],
-    prevText: '',
-    nextText: '',
-    prevIcon: true,
-    nextIcon: true,
+    prevText: false,
+    nextText: false,
     disabled: false,
     customClass: ''
   }

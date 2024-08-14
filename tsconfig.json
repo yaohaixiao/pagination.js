@@ -13,12 +13,12 @@
   // 不需要编译的文件
   "exclude": [
     "node_modules",
+    "./report",
     "./types",
-    "./build/**/*.js",
-    "./docs/**/*.js",
-    "./babel.config.js",
-    "./commitlint.config.js",
-    "./jest.config.js",
+    "./tests",
+    "./build/",
+    "./docs/",
+    "./*.config.js",
     "./*.min.js"
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "@yaohaixiao/pagination.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "pagination.js - 简单好用的 JavaScript 分页导航组件库。",
   "main": "pagination.min.js",
   "scripts": {

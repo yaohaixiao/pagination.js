@@ -77,7 +77,31 @@
   // plain - 带背景色
   // bordered - 带边框
   <strong class="highlight">theme: 'plain'</strong>,
-  align: 'left',
+  layout: ['prev', 'pager', 'next']
+})</code></pre>
+        </div>
+      </div>
+    </section>
+    <section id="section-align" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Align</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="align-justify" class="preview__view"></div>
+          <div id="align-left" class="preview__view"></div>
+          <div id="align-right" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
+  parent: '#align-justify',
+  total: 187,
+  theme: 'plain',
+  // align 可选值：
+  // justify - 居中对齐(默认值)
+  // plain - 带背景色
+  // bordered - 带边框
+  <strong class="highlight">align: 'left'</strong>,
   layout: ['prev', 'pager', 'next']
 })</code></pre>
         </div>
@@ -104,6 +128,28 @@
   // ['prev', 'next'] - 默认主题，仅显示上/下页按钮
   // ['pager'] - 默认主题，显示数值按钮
   <strong class="highlight">layout: ['prev', 'pager', 'next']</strong>
+})</code></pre>
+        </div>
+      </div>
+    </section>
+    <section id="section-total" class="section">
+      <header class="section__header">
+        <h2 class="section__title">Total</h2>
+      </header>
+      <div class="section__content">
+        <div class="preview">
+          <div id="total-sixty" class="preview__view"></div>
+          <div id="total-eighty" class="preview__view"></div>
+          <div id="total-hundred" class="preview__view"></div>
+        </div>
+        <div class="usage">
+<pre class="usage__pre"><code class="usage__code">new Pagination({
+  parent: '#total-hundred',
+  // total 可选值范围：1 ~ 正无穷
+  <strong class="highlight">total: 100</strong>,
+  size: 10,
+  theme: 'plain',
+  layout: ['prev', 'pager', 'next']
 })</code></pre>
         </div>
       </div>
@@ -230,7 +276,6 @@
     parent: '#theme-plain',
     total: 187,
     theme: 'plain',
-    align: 'left',
     layout: [
       'prev',
       'pager',
@@ -242,6 +287,41 @@
     parent: '#theme-bordered',
     total: 187,
     theme: 'bordered',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $justify = new Pagination({
+    parent: '#align-justify',
+    total: 187,
+    theme: 'plain',
+    align: 'justify',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $left = new Pagination({
+    parent: '#align-left',
+    total: 187,
+    theme: 'plain',
+    align: 'left',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $right = new Pagination({
+    parent: '#align-right',
+    total: 187,
+    theme: 'plain',
     align: 'right',
     layout: [
       'prev',
@@ -279,6 +359,42 @@
     size: 15,
     theme: 'bordered',
     layout: [ 'pager' ]
+  })
+
+  const $sixty = new Pagination({
+    parent: '#total-sixty',
+    total: 60,
+    size: 10,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $eighty = new Pagination({
+    parent: '#total-eighty',
+    total: 80,
+    size: 10,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
+  })
+
+  const $hundred = new Pagination({
+    parent: '#total-hundred',
+    total: 100,
+    size: 10,
+    theme: 'plain',
+    layout: [
+      'prev',
+      'pager',
+      'next'
+    ]
   })
 
   const $start = new Pagination({

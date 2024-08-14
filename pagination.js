@@ -231,6 +231,52 @@ class Pagination {
   }
 
   /**
+   * 用来设置 theme 配置参数，或者获取 theme 配置参数的值：
+   * 1. 传递 theme 参数，用来设置 theme 配置信息的值；
+   * 2. 不传递则用以获取 theme 配置信息的值；
+   * ========================================================================
+   * @method theme
+   * @param {String} [theme] - 可选，传递 theme 参数，用来设置 theme 配置信息的值；
+   *                           不传递则用以获取 theme 配置信息的值；
+   * @returns {Number|Pagination}
+   */
+  theme(theme) {
+    const THEMES = ['default', 'plain', 'bordered']
+
+    if (isString(theme) && theme && THEMES.includes(theme)) {
+      this.attr('theme', theme)
+      this.refresh()
+    } else {
+      return this.attr('theme')
+    }
+
+    return this
+  }
+
+  /**
+   * 用来设置 align 配置参数，或者获取 align 配置参数的值：
+   * 1. 传递 align 参数，用来设置 align 配置信息的值；
+   * 2. 不传递则用以获取 align 配置信息的值；
+   * ========================================================================
+   * @method align
+   * @param {String} [align] - 可选，传递 align 参数，用来设置 align 配置信息的值；
+   *                           不传递则用以获取 align 配置信息的值；
+   * @returns {Number|Pagination}
+   */
+  align(align) {
+    const ALIGNS = ['default', 'plain', 'bordered']
+
+    if (isString(align) && align && ALIGNS.includes(align)) {
+      this.attr('align', align)
+      this.refresh()
+    } else {
+      return this.attr('align')
+    }
+
+    return this
+  }
+
+  /**
    * 通过配置参数 total 和 size 的值，计算一共有多少页
    * ========================================================================
    * @method pages
@@ -241,6 +287,25 @@ class Pagination {
     const size = this.attr('size')
 
     return Math.ceil(total / size)
+  }
+
+  /**
+   * 用来设置 disabled 配置参数，或者获取 disabled 配置参数的值：
+   * 1. 传递 disabled 参数，用来设置 disabled 配置信息的值；
+   * 2. 不传递则用以获取 disabled 配置信息的值；
+   * ========================================================================
+   * @method disabled
+   * @param {Boolean} [disabled] - 可选，传递 disabled 参数，用来设置 disabled 配置信息的值；
+   *                               不传递则用以获取 disabled 配置信息的值；
+   * @returns {Boolean|Pagination}
+   */
+  disabled(disabled) {
+    if (isBoolean(disabled)) {
+      this.attr('disabled', disabled)
+      this.refresh()
+    } else {
+      return this.attr('disabled')
+    }
   }
 
   /**
@@ -293,25 +358,6 @@ class Pagination {
     }
 
     return range
-  }
-
-  /**
-   * 用来设置 disabled 配置参数，或者获取 disabled 配置参数的值：
-   * 1. 传递 disabled 参数，用来设置 disabled 配置信息的值；
-   * 2. 不传递则用以获取 disabled 配置信息的值；
-   * ========================================================================
-   * @method disabled
-   * @param {Boolean} [disabled] - 可选，传递 disabled 参数，用来设置 disabled 配置信息的值；
-   *                               不传递则用以获取 disabled 配置信息的值；
-   * @returns {Boolean|Pagination}
-   */
-  disabled(disabled) {
-    if (isBoolean(disabled)) {
-      this.attr('disabled', disabled)
-      this.refresh()
-    } else {
-      return this.attr('disabled')
-    }
   }
 
   /**

@@ -143,19 +143,34 @@ declare class Pagination {
      */
     limit(limit?: number): number | Pagination;
     /**
+     * 用来设置 theme 配置参数，或者获取 theme 配置参数的值：
+     * 1. 传递 theme 参数，用来设置 theme 配置信息的值；
+     * 2. 不传递则用以获取 theme 配置信息的值；
+     * ========================================================================
+     * @method theme
+     * @param {String} [theme] - 可选，传递 theme 参数，用来设置 theme 配置信息的值；
+     *                           不传递则用以获取 theme 配置信息的值；
+     * @returns {Number|Pagination}
+     */
+    theme(theme?: string): number | Pagination;
+    /**
+     * 用来设置 align 配置参数，或者获取 align 配置参数的值：
+     * 1. 传递 align 参数，用来设置 align 配置信息的值；
+     * 2. 不传递则用以获取 align 配置信息的值；
+     * ========================================================================
+     * @method align
+     * @param {String} [align] - 可选，传递 align 参数，用来设置 align 配置信息的值；
+     *                           不传递则用以获取 align 配置信息的值；
+     * @returns {Number|Pagination}
+     */
+    align(align?: string): number | Pagination;
+    /**
      * 通过配置参数 total 和 size 的值，计算一共有多少页
      * ========================================================================
      * @method pages
      * @returns {Number}
      */
     pages(): number;
-    /**
-     * 通过配置参数 pages 和当前页面 page 的值，以及 limit 的值，计算当前数值按钮的显示范围
-     * ========================================================================
-     * @method range
-     * @returns {Array}
-     */
-    range(): any[];
     /**
      * 用来设置 disabled 配置参数，或者获取 disabled 配置参数的值：
      * 1. 传递 disabled 参数，用来设置 disabled 配置信息的值；
@@ -167,6 +182,13 @@ declare class Pagination {
      * @returns {Boolean|Pagination}
      */
     disabled(disabled?: boolean): boolean | Pagination;
+    /**
+     * 通过配置参数 pages 和当前页面 page 的值，以及 limit 的值，计算当前数值按钮的显示范围
+     * ========================================================================
+     * @method range
+     * @returns {Array}
+     */
+    range(): any[];
     /**
      * 用来获取显示分页导航的父节点
      * ========================================================================

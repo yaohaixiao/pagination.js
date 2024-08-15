@@ -136,7 +136,7 @@ new Pagination(options)
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-size
 
 
-### #limit
+#### limit
 
 Type: `Number`
 

@@ -74,15 +74,105 @@ const Pagination = require('@yaohaixiao/pagination.js/pagination.min')
 ```
 
 
-## Usage
+## API Documentation
 
-pagination.js 有着非常丰富的配置方式，支持设置主题，支持配置导航按钮布局配置等各种灵活的配置。
 
-### Theme
+### Options
 
-pagination.js 支持导航主题配置，目前支持 default、plain 和 bordered 3 种主题。
+pagination.js 提供了灵活而实用的配置项，以便适应不同的展示方式。
 
-#### default theme
+
+#### parent
+
+Type: `String|Element`
+
+* String： 选择器字符串;
+* HTMLElement： DOM 元素;
+
+必须，parent 参数用来指定显示分页导航组件的 DOM 节点或者选择器字符串。
+
+
+#### total
+
+Type: `Number`
+
+必须，total 参数用来指定分页组件要处理的数据总量，通过它和 size 参数计算出分页导航组件的页面总数量。
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 60
+
+new Pagination(options)
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-total
+
+
+#### size
+
+Type: `Number`
+
+Default: `20`
+
+可选，size 参数，用来指定每页显示的数据量。用以计算分页导航按钮页数数量。
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 128
+// pages = Math.ceil(128/25)
+options.size = 25 // 默认值：20
+
+new Pagination(options)
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-size
+
+
+### #limit
+
+Type: `Number`
+
+Default: `7`
+
+可选，limit 参数用来控制导航数字按钮的数量。
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 128
+// pages = Math.ceil(128/10)
+// 会有 13 页
+options.size = 10
+// limit = 9，会显示9个数字导航按钮，
+// 其中切换到不同页面，会动态计算是否显示快速到上/下一组按钮
+options.limit = 9 // 默认值：7，取值范围 5~13
+
+new Pagination(options)
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-limit
+
+
+#### theme
+
+Type: `String`
+
+Default: `'default'`
+
+可选，theme 参数用来设置导航组件的主题样式。目前支持 default、plain 和 bordered 3 种主题。
+
+##### default theme
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -95,7 +185,7 @@ options.total = 128
 new Pagination(options)
 ```
 
-#### plain theme
+##### plain theme
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -109,7 +199,7 @@ options.theme = 'plain'
 new Pagination(options)
 ```
 
-#### bordered theme
+##### bordered theme
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -126,11 +216,16 @@ new Pagination(options)
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-theme
 
 
-### Align
+#### align
 
-pagination.js 支持导航对齐方式配置，目前支持 justify、left 和 right 3 种主题。
+Type: `String`
 
-#### justify
+Default: `'default'`
+
+可选，align 参数用来指定导航组件的对齐方式。目前支持 justify、left 和 right 3 种主题。
+
+
+##### justify
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -142,13 +237,11 @@ options.parent = '#pagination-container'
 options.align = 'justify'
 options.total = 128
 
-var $pagination = new Pagination(options)
-
-// 或者使用 align() 方法设置
-$pagination.align('justify')
+new Pagination(options)
 ```
 
-#### left
+
+##### left
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -159,13 +252,10 @@ options.parent = '#pagination-container'
 options.total = 128
 options.align = 'left'
 
-var $pagination = new Pagination(options)
-
-// 或者使用 align() 方法设置
-$pagination.align('left')
+new Pagination(options)
 ```
 
-#### bordered theme
+##### bordered theme
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -176,22 +266,23 @@ options.parent = '#pagination-container'
 options.total = 128
 options.theme = 'right'
 
-var $pagination = new Pagination(options)
-
-// 或者使用 align() 方法设置
-$pagination.align('right')
+new Pagination(options)
 ```
 
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-align
 
 
 
-### Layout
+#### layout
 
-pagination.js 支持配置导航按钮布局配置，支持上/下一页导航和数字导航的布局组合配置。
+Type: `Array`
+
+Default: `['prev', 'pager', 'next']`
+
+可选，layout 参数用来指定导航按钮布局显示。支持上/下一页导航加数字导航的布局组合显示。
 
 
-#### full layout
+##### full layout
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -206,7 +297,7 @@ new Pagination(options)
 ```
 
 
-#### prev & next layout only
+##### prev & next layout only
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -221,7 +312,7 @@ new Pagination(options)
 ```
 
 
-#### pager layout only
+##### pager layout only
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -238,31 +329,14 @@ new Pagination(options)
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-layout
 
 
-### Total
 
-pagination.js 可以配置 total 参数，用来计算当前导航的总页数量。
+#### page
 
-```js
-import Pagination from '@yaohaixiao/pagination.js/pagination'
+Type: `Number`
 
-const options = Pagination.DEFAULTS
+Default: `1`
 
-options.parent = '#pagination-container'
-options.total = 60
-
-const pagination = new Pagination(options)
-
-// 或者通过 total() 方法设置
-pagination.total(3)
-```
-
-演示地址：https://yaohaixiao.github.io/pagination.js/#section-total
-
-
-
-### Page
-
-pagination.js 可以配置 page 参数，用来控制导航按钮的当前页。
+可选，page 参数用来控制导航按钮的当前页。
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -274,69 +348,22 @@ options.total = 128
 // 默认选中第5页
 options.page = 5 // 默认值：1
 
-const pagination = new Pagination(options)
-
-// 或者通过 page() 方法设置
-pagination.page(3)
+new Pagination(options)
 ```
 
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-page
 
 
-### Size
-
-pagination.js 可以配置 size 参数，用来控制导航按钮页数数量。
-
-```js
-import Pagination from '@yaohaixiao/pagination.js/pagination'
-
-const options = Pagination.DEFAULTS
-
-options.parent = '#pagination-container'
-options.total = 128
-// pages = Math.ceil(128/25)
-options.size = 25 // 默认值：20
-
-const pagination = new Pagination(options)
-
-// 或者通过 size() 方法设置
-pagination.size(30)
-```
-
-演示地址：https://yaohaixiao.github.io/pagination.js/#section-size
-
-
-### Limit
-
-pagination.js 可以配置 limit 参数，用来控制导航数字按钮的数量。
-
-```js
-import Pagination from '@yaohaixiao/pagination.js/pagination'
-
-const options = Pagination.DEFAULTS
-
-options.parent = '#pagination-container'
-options.total = 128
-// pages = Math.ceil(128/10)
-// 会有 13 页
-options.size = 10
-// limit = 9，会显示9个数字导航按钮，
-// 其中切换到不同页面，会动态计算是否显示快速到上/下一组按钮
-options.limit = 9 // 默认值：7，取值范围 5~13
-
-const pagination = new Pagination(options)
-
-// 或者通过 limit() 方法设置
-pagination.limit(7)
-```
-
-演示地址：https://yaohaixiao.github.io/pagination.js/#section-limit
 
 
 
-### Disabled
+#### disabled
 
-pagination.js 可以配置 disabled 参数，用来控制分页导航是否可用。
+Type: `Boolean`
+
+Default: `false`
+
+可选，disabled 参数用来控制分页导航是否可用。
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -352,19 +379,78 @@ options.size = 10
 // 其中切换到不同页面，会动态计算是否显示快速到上/下一组按钮
 options.disabled = true // 默认值：false
 
-
-const pagination = new Pagination(options)
-
-// 或者通过 disabled() 方法设置，启用分页导航
-pagination.disabled(false)
+new Pagination(options)
 ```
 
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-disabled
 
 
+### Methods
+
+pagination.js 的提供的方法如下：
+
+
+#### initialize(options)
+
+分页组件的初始化方法。
+
+
+##### Parameters
+
+###### options
+
+Type: `Object`
+
+（必须）options 指定分页组件初始化需要配置的 options 参数信息。详情参考 Options 参数。
+
+#### Returns
+
+Type: `Any`
+
+Pagination 对象，以便实现链式调用。
+
+
+#### attr([prop, value])
+
+设置或者获取初始化时配置的 attrs 信息的。
+
+##### Parameters
+
+###### prop
+
+Type: `String|Object`
+
+（可选）attrs 中的属性名称或者要配置的 attrs 信息。
+
+###### value
+
+Type: `Any`
+
+（可选）要设置的 prop 属性的值。
+
+* 不传递任何参数：返回完整的 attrs 配置信息；
+* 仅传递 prop：
+    * String: 返回 attrs 配型信息中与 prop 对应的值；
+    * Object: 用来设置 attrs 配置信息；
+* 同时传递 prop 和 value 参数：设置 attrs 配置信息中的某个属性值；
+
+##### Returns
+
+Type: `Any`
+
+Pagination 对象，以便实现链式调用。
+
+
 ### Events
 
-pagination.js 提供丰富的定义事件订阅，目前提供的事件有 created、mounted、change、refresh、destroy 和 reload。
+pagination.js 提供丰富的定义事件订阅，目前提供的事件有： 
+
+- created - 分页组件完成配置信息初始化时触发；
+- mounted - 分页组件 UI 界面绘制完毕时触发；
+- change - 分页组件的当前页数值发生改变时触发；
+- refresh - 分页组件当前页数值改变后，会重新绘制导航按钮，重新绘制完成时触发；
+- destroy - 销毁分页组件时触发；
+- reload - 调用 reload() 方法，重新初始化并完成 UI 界面绘制后触发；
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -403,6 +489,10 @@ $pagination.initialize({
   layout: ['prev', 'pager', 'next']
 })
 ```
+
+
+
+
 
 ## License
 

@@ -136,6 +136,31 @@ new Pagination(options)
 演示地址：https://yaohaixiao.github.io/pagination.js/#section-size
 
 
+#### page
+
+Type: `Number`
+
+Default: `1`
+
+可选，page 参数用来控制导航按钮的当前页。
+
+```js
+import Pagination from '@yaohaixiao/pagination.js/pagination'
+
+const options = Pagination.DEFAULTS
+
+options.parent = '#pagination-container'
+options.total = 128
+// 默认选中第5页
+options.page = 5 // 默认值：1
+
+new Pagination(options)
+```
+
+演示地址：https://yaohaixiao.github.io/pagination.js/#section-page
+
+
+
 #### limit
 
 Type: `Number`
@@ -255,7 +280,7 @@ options.align = 'left'
 new Pagination(options)
 ```
 
-##### bordered theme
+##### right
 
 ```js
 import Pagination from '@yaohaixiao/pagination.js/pagination'
@@ -330,32 +355,6 @@ new Pagination(options)
 
 
 
-#### page
-
-Type: `Number`
-
-Default: `1`
-
-可选，page 参数用来控制导航按钮的当前页。
-
-```js
-import Pagination from '@yaohaixiao/pagination.js/pagination'
-
-const options = Pagination.DEFAULTS
-
-options.parent = '#pagination-container'
-options.total = 128
-// 默认选中第5页
-options.page = 5 // 默认值：1
-
-new Pagination(options)
-```
-
-演示地址：https://yaohaixiao.github.io/pagination.js/#section-page
-
-
-
-
 
 #### disabled
 
@@ -387,7 +386,7 @@ new Pagination(options)
 
 ### Methods
 
-pagination.js 的提供的方法如下：
+pagination.js 的 API 接口提供的方法如下：
 
 
 #### initialize(options)
@@ -438,7 +437,114 @@ Type: `Any`
 
 Type: `Any`
 
-Pagination 对象，以便实现链式调用。
+
+#### total([count])
+
+设置或者获取分页组件的 total 信息。
+
+##### Parameters
+
+###### count
+
+Type: `Number`
+
+（可选）不传递参数返回总页数，传递 count 参数，更新组件的总页数信息，并调用 refresh() 方法重绘界面。
+
+#### Returns
+
+Type: `Number`
+
+返回总页数。
+
+
+#### size([size])
+
+设置或者获取分页组件的 size 信息。
+
+##### Parameters
+
+###### size
+
+Type: `Number`
+
+（可选）不传递参数返回每页显示数量，传递 size 参数，更新组件的每页显示数量信息，并调用 refresh() 方法重绘界面。
+
+#### Returns
+
+Type: `Number`
+
+返回每页显示数量。
+
+
+#### limit([limit])
+
+设置或者获取分页组件的 limit 信息。
+
+##### Parameters
+
+###### limit
+
+Type: `Number`
+
+（可选）不传递参数返回数字导航按钮数量，传递 limit 参数，更新组件的数字导航按钮数量信息，并调用 refresh() 方法重绘界面。
+
+#### Returns
+
+Type: `Number`
+
+返回数字导航按钮数量。
+
+
+#### pages()
+
+获取分页组件的总页数信息。
+
+#### Returns
+
+Type: `Number`
+
+返回总页数数值。
+
+
+#### refresh()
+
+更新分页导航 UI 界面。
+
+#### Returns
+
+Type: `Pagination`
+
+返回 Pagination 对象，以便实现链式调用。
+
+
+#### destroy()
+
+销毁 pagination.js 创建的所有 DOM 元素和与其对应的事件绑定。
+
+##### Returns
+
+Type: `Pagination`
+
+返回 Pagination 对象，以便实现链式调用。
+
+
+#### reload(options)
+
+程序重启，先执行 destroy() 方法执行程序销毁逻辑，然后重新初始化并重新绘制界面。
+
+##### Parameters
+
+###### options
+
+Type: `Pagination`
+
+（必须）指定重启程序的新的配置信息（参考 DEFAULT 属性）。
+
+##### Returns
+
+Type: `Pagination`
+
+返回 Pagination 对象，以便实现链式调用。
 
 
 ### Events

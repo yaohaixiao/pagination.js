@@ -231,6 +231,19 @@ class Pagination {
   }
 
   /**
+   * 通过配置参数 total 和 size 的值，计算一共有多少页
+   * ========================================================================
+   * @method pages
+   * @returns {Number}
+   */
+  pages() {
+    const total = this.attr('total')
+    const size = this.attr('size')
+
+    return Math.ceil(total / size)
+  }
+
+  /**
    * 用来设置 theme 配置参数，或者获取 theme 配置参数的值：
    * 1. 传递 theme 参数，用来设置 theme 配置信息的值；
    * 2. 不传递则用以获取 theme 配置信息的值；
@@ -274,19 +287,6 @@ class Pagination {
     }
 
     return this
-  }
-
-  /**
-   * 通过配置参数 total 和 size 的值，计算一共有多少页
-   * ========================================================================
-   * @method pages
-   * @returns {Number}
-   */
-  pages() {
-    const total = this.attr('total')
-    const size = this.attr('size')
-
-    return Math.ceil(total / size)
   }
 
   /**
